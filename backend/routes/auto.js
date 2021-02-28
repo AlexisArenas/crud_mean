@@ -2,9 +2,19 @@ const express = require("express");
 const router = express.Router();
 
 const Auto = require("../model/auto");
+
 router.get("/listaAutos", async(req, res) => {
     const auto = await Auto.find();
     res.send(auto)
+});
+
+router.get('/:_id', async(req, res) => {
+    const auto = await Auto.findById(req.params._id);
+
+    if (!auto) {
+        res.status(400).send('Auto no se encuentra registrado');
+    }
+    res.status(200).send(auto);
 });
 
 router.post('/', async(req, res) => {

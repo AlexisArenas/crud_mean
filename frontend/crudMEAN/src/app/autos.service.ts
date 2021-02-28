@@ -26,6 +26,9 @@ export class AutosService {
     return this.http.delete<any>(this.urlGeneral+"/"+auto._id)
   }
 
+  get(id: string) {
+    return this.http.get<any>(this.urlGeneral+"/"+id);
+  }
 
 
 }

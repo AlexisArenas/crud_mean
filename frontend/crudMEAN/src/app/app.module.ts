@@ -16,13 +16,15 @@ import {HttpClientModule} from '@angular/common/http'
 
 //Servicio
 import { AutosService } from "./autos.service";
+import { EditarAutosComponent } from './editar-autos/editar-autos.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ListarAutosComponent,
-    CrearAutosComponent
+    CrearAutosComponent,
+    EditarAutosComponent
     
   ],
   imports: [
